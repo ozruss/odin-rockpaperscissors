@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RPS Game</title>
+    </head>
+<body>
+    <script>
+        function playRound() {
+            let playerChoice = getPlayerChoice();
+            function getPlayerChoice() {
+                let choice = prompt("Please type rock, paper, or scissors");
+                return (choice.toUpperCase());
+            }
+            let computerChoice = getComputerChoice(0, 2);
+            function getComputerChoice(min, max) {
+                if (Math.floor(Math.random() * (max - min + 1) + min) === 0) {
+                return "ROCK";
+                } else if (Math.floor(Math.random() * (max - min + 1) + min) === 1) {
+                return "PAPER";
+                } else {
+                return "SCISSORS";
+        }
+            }
+            if (playerChoice === computerChoice) {
+                return null;
+            } else if (playerChoice === "ROCK" && computerChoice === "PAPER") {
+                return "lose";
+            } else if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
+                return "win";
+            } else if (playerChoice === "PAPER" && computerChoice === "SCISSORS") {
+                return "lose";
+            } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
+                return "win";
+            } else if (playerChoice === "SCISSORS" && computerChoice === "ROCK") {
+                return "lose";
+            } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
+                return "win";
+            }
+        }
+        function game() {
+            let playerScore = 0;
+            let computerScore = 0;
+            for (let i = 0; i < 5; i++) {
+                if (playRound() === "win") {
+                ++playerScore;
+                } else  {
+                ++computerScore;
+                }
+            }
+            if (playerScore > computerScore) {
+                window.alert("You win");
+            } else if (playerScore < computerScore) {
+                window.alert("You lose");
+            } else {
+                window.alert("Tie");
+            } 
+        } 
+        game();
+    </script>
+</body>
+</html>
