@@ -1,1 +1,1 @@
-# odin-rockpaperscissors
+Odin Project JavaScript rock paper scissors game (console only).
