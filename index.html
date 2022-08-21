@@ -1,61 +1,32 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>RPS Game</title>
-    </head>
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rock Paper Scissors</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
 <body>
-    <script>
-        function playRound() {
-            let playerChoice = getPlayerChoice();
-            function getPlayerChoice() {
-                let choice = prompt("Please type rock, paper, or scissors");
-                return (choice.toUpperCase());
-            }
-            let computerChoice = getComputerChoice(0, 2);
-            function getComputerChoice(min, max) {
-                if (Math.floor(Math.random() * (max - min + 1) + min) === 0) {
-                return "ROCK";
-                } else if (Math.floor(Math.random() * (max - min + 1) + min) === 1) {
-                return "PAPER";
-                } else {
-                return "SCISSORS";
-        }
-            }
-            if (playerChoice === computerChoice) {
-                return null;
-            } else if (playerChoice === "ROCK" && computerChoice === "PAPER") {
-                return "lose";
-            } else if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
-                return "win";
-            } else if (playerChoice === "PAPER" && computerChoice === "SCISSORS") {
-                return "lose";
-            } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
-                return "win";
-            } else if (playerChoice === "SCISSORS" && computerChoice === "ROCK") {
-                return "lose";
-            } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
-                return "win";
-            }
-        }
-        function game() {
-            let playerScore = 0;
-            let computerScore = 0;
-            for (let i = 0; i < 5; i++) {
-                if (playRound() === "win") {
-                ++playerScore;
-                } else  {
-                ++computerScore;
-                }
-            }
-            if (playerScore > computerScore) {
-                window.alert("You win");
-            } else if (playerScore < computerScore) {
-                window.alert("You lose");
-            } else {
-                window.alert("Tie");
-            } 
-        } 
-        game();
-    </script>
+    <div class="main">
+        <div class="title">Rock, Paper, Scissors</div>
+        <div class="results">
+            <div class="gameScores" id="playerSign">Your move:</div>
+            <div class="gameScores"  id="computerSign">Computer move:</div>
+            <div class="score">
+                <div class="scoreText">Score:</div>
+                <div id="playerScore"></div>
+                <div id="computerScore"></div>
+            </div>
+        </div>    
+        <div class="buttonContainer">
+            <button class="sign" id="rockBtn">✊</button>
+            <button class="sign" id="paperBtn">✋</button>
+            <button class="sign" id="scissorsBtn">✌</button>
+        </div>
+        <button id="resetBtn">reset</button>
+    </div>
 </body>
 </html>
+

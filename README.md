@@ -1,1 +1,1 @@
-Odin Project JavaScript rock paper scissors game (console only).
+Odin Project JavaScript basic rock paper scissors game through prompt, no styling.
