@@ -1,1 +1,1 @@
-Odin Project JavaScript basic rock paper scissors game through prompt, no styling.
+Odin Project JS RPS game with GUI.
